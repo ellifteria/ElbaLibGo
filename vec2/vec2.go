@@ -25,6 +25,13 @@ func Vec2ScalarProd(lhs Vec2, rhs float64) Vec2 {
 	}
 }
 
+func Vec2ScalarPow(lhs Vec2, rhs float64) Vec2 {
+	return Vec2{
+		math.Pow(lhs.x, rhs),
+		math.Pow(lhs.y, rhs),
+	}
+}
+
 func Vec2Add(lhs Vec2, rhs Vec2) Vec2 {
 	return Vec2{
 		lhs.x + rhs.x,

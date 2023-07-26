@@ -28,6 +28,14 @@ func Vec3ScalarProd(lhs Vec3, rhs float64) Vec3 {
 	}
 }
 
+func Vec3ScalarPow(lhs Vec3, rhs float64) Vec3 {
+	return Vec3{
+		math.Pow(lhs.x, rhs),
+		math.Pow(lhs.y, rhs),
+		math.Pow(lhs.z, rhs),
+	}
+}
+
 func Vec3Add(lhs Vec3, rhs Vec3) Vec3 {
 	return Vec3{
 		lhs.x + rhs.x,
