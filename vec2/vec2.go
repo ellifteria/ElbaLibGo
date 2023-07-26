@@ -3,14 +3,14 @@ package vec2
 import "math"
 
 type Vec2 struct {
-	x float64
-	y float64
+	X float64
+	Y float64
 }
 
 func Vec2ScalarAdd(lhs Vec2, rhs float64) Vec2 {
 	return Vec2{
-		lhs.x + rhs,
-		lhs.y + rhs,
+		lhs.X + rhs,
+		lhs.Y + rhs,
 	}
 }
 
@@ -20,22 +20,22 @@ func Vec2ScalarSubtract(lhs Vec2, rhs float64) Vec2 {
 
 func Vec2ScalarProd(lhs Vec2, rhs float64) Vec2 {
 	return Vec2{
-		lhs.x * rhs,
-		lhs.y * rhs,
+		lhs.X * rhs,
+		lhs.Y * rhs,
 	}
 }
 
 func Vec2ScalarPow(lhs Vec2, rhs float64) Vec2 {
 	return Vec2{
-		math.Pow(lhs.x, rhs),
-		math.Pow(lhs.y, rhs),
+		math.Pow(lhs.X, rhs),
+		math.Pow(lhs.Y, rhs),
 	}
 }
 
 func Vec2Add(lhs Vec2, rhs Vec2) Vec2 {
 	return Vec2{
-		lhs.x + rhs.x,
-		lhs.y + rhs.y,
+		lhs.X + rhs.X,
+		lhs.Y + rhs.Y,
 	}
 }
 
@@ -45,19 +45,19 @@ func Vec2Subtract(lhs Vec2, rhs Vec2) Vec2 {
 
 func Vec2ElementWiseProd(lhs Vec2, rhs Vec2) Vec2 {
 	return Vec2{
-		lhs.x * rhs.x,
-		lhs.y * rhs.y,
+		lhs.X * rhs.X,
+		lhs.Y * rhs.Y,
 	}
 }
 
 func Vec2DotProd(lhs Vec2, rhs Vec2) float64 {
-	return lhs.x*rhs.x + lhs.y*rhs.y
+	return lhs.X*rhs.X + lhs.Y*rhs.Y
 }
 
 func Vec2Abs(v Vec2) Vec2 {
 	return Vec2{
-		math.Abs(v.x),
-		math.Abs(v.y),
+		math.Abs(v.X),
+		math.Abs(v.Y),
 	}
 }
 
@@ -67,8 +67,8 @@ func Vec2Unit(v Vec2) Vec2 {
 
 func Vec2Floor(v Vec2) Vec2 {
 	return Vec2{
-		math.Floor(v.x),
-		math.Floor(v.y),
+		math.Floor(v.X),
+		math.Floor(v.Y),
 	}
 }
 
@@ -82,4 +82,11 @@ func Vec2LengthSquared(v Vec2) float64 {
 
 func Vec2Length(v Vec2) float64 {
 	return math.Sqrt(Vec2LengthSquared(v))
+}
+
+func Vec2ToIVec2(v Vec2) IVec2 {
+	return IVec2{
+		int(v.X),
+		int(v.Y),
+	}
 }

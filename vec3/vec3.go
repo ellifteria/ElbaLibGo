@@ -3,16 +3,16 @@ package vec3
 import "math"
 
 type Vec3 struct {
-	x float64
-	y float64
-	z float64
+	X float64
+	Y float64
+	Z float64
 }
 
 func Vec3ScalarAdd(lhs Vec3, rhs float64) Vec3 {
 	return Vec3{
-		lhs.x + rhs,
-		lhs.y + rhs,
-		lhs.z + rhs,
+		lhs.X + rhs,
+		lhs.Y + rhs,
+		lhs.Z + rhs,
 	}
 }
 
@@ -22,25 +22,25 @@ func Vec3ScalarSubtract(lhs Vec3, rhs float64) Vec3 {
 
 func Vec3ScalarProd(lhs Vec3, rhs float64) Vec3 {
 	return Vec3{
-		lhs.x * rhs,
-		lhs.y * rhs,
-		lhs.z * rhs,
+		lhs.X * rhs,
+		lhs.Y * rhs,
+		lhs.Z * rhs,
 	}
 }
 
 func Vec3ScalarPow(lhs Vec3, rhs float64) Vec3 {
 	return Vec3{
-		math.Pow(lhs.x, rhs),
-		math.Pow(lhs.y, rhs),
-		math.Pow(lhs.z, rhs),
+		math.Pow(lhs.X, rhs),
+		math.Pow(lhs.Y, rhs),
+		math.Pow(lhs.Z, rhs),
 	}
 }
 
 func Vec3Add(lhs Vec3, rhs Vec3) Vec3 {
 	return Vec3{
-		lhs.x + rhs.x,
-		lhs.y + rhs.y,
-		lhs.z + rhs.z,
+		lhs.X + rhs.X,
+		lhs.Y + rhs.Y,
+		lhs.Z + rhs.Z,
 	}
 }
 
@@ -50,21 +50,21 @@ func Vec3Subtract(lhs Vec3, rhs Vec3) Vec3 {
 
 func Vec3ElementWiseProd(lhs Vec3, rhs Vec3) Vec3 {
 	return Vec3{
-		lhs.x * rhs.x,
-		lhs.y * rhs.y,
-		lhs.z * rhs.z,
+		lhs.X * rhs.X,
+		lhs.Y * rhs.Y,
+		lhs.Z * rhs.Z,
 	}
 }
 
 func Vec3DotProd(lhs Vec3, rhs Vec3) float64 {
-	return lhs.x*rhs.x + lhs.y*rhs.y + lhs.z*rhs.z
+	return lhs.X*rhs.X + lhs.Y*rhs.Y + lhs.Z*rhs.Z
 }
 
 func Vec3Abs(v Vec3) Vec3 {
 	return Vec3{
-		math.Abs(v.x),
-		math.Abs(v.y),
-		math.Abs(v.z),
+		math.Abs(v.X),
+		math.Abs(v.Y),
+		math.Abs(v.Z),
 	}
 }
 
@@ -74,9 +74,9 @@ func Vec3Unit(v Vec3) Vec3 {
 
 func Vec3Floor(v Vec3) Vec3 {
 	return Vec3{
-		math.Floor(v.x),
-		math.Floor(v.y),
-		math.Floor(v.z),
+		math.Floor(v.X),
+		math.Floor(v.Y),
+		math.Floor(v.Z),
 	}
 }
 
@@ -90,4 +90,12 @@ func Vec3LengthSquared(v Vec3) float64 {
 
 func Vec3Length(v Vec3) float64 {
 	return math.Sqrt(Vec3LengthSquared(v))
+}
+
+func Vec3ToIVec3(v Vec3) IVec3 {
+	return IVec3{
+		int(v.X),
+		int(v.Y),
+		int(v.Z),
+	}
 }
