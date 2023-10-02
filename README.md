@@ -1,5 +1,6 @@
-# ElbaLibGo
+# Ebla-Go
 
-Elli's Base Library: Go
+Elli's Base LibrAry: Go
 
 ---
+
